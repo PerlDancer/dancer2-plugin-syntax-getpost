@@ -3,11 +3,18 @@ use strict;
 use warnings;
 
 package Dancer::Plugin::Syntax::GetPost;
-# ABSTRACT: No abstract given for Dancer::Plugin::Syntax::GetPost
+# ABSTRACT: Syntactic sugar for GET+POST handlers
 # VERSION
 
-# Dependencies
-use autodie 2.00;
+use Dancer::Plugin;
+use Dancer ':syntax';
+
+register get_post => sub {
+  my ( $self, @args ) = plugin_args(@_);
+  any [qw/get post/] => @args;
+};
+
+register_plugin for_versions => [ 1, 2 ];
 
 1;
 
@@ -17,18 +24,23 @@ use autodie 2.00;
 
   use Dancer::Plugin::Syntax::GetPost;
 
+  get_post '/myform' => sub { ... };
+
 =head1 DESCRIPTION
 
-This module might be cool, but you'd never know it from the lack
-of documentation.
+This module provides very simple syntactic sugar to define a handler for GET and
+POST requests.  Instead of writing this:
 
-=head1 USAGE
+  any [qw/get post/] => '/form' => sub { ... };
 
-Good luck!
+You can write just this:
+
+  get_post '/form' => sub { ... };
 
 =head1 SEE ALSO
 
-Maybe other modules do related things.
+=for :list
+* L<Dancer>
 
 =cut
 
