@@ -2,9 +2,9 @@ use strict;
 use warnings;
 use Test::More 0.96 import => ['!pass'];
 
-use Dancer;
-use Dancer::Test;
-use Dancer::Plugin::Syntax::GetPost;
+use Dancer2;
+use Dancer2::Test;
+use Dancer2::Plugin::Syntax::GetPost;
 
 get_post '/form' => sub { return "method = " . request->method };
 

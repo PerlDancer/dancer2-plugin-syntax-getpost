@@ -2,19 +2,18 @@ use 5.008001;
 use strict;
 use warnings;
 
-package Dancer::Plugin::Syntax::GetPost;
+package Dancer2::Plugin::Syntax::GetPost;
 # ABSTRACT: Syntactic sugar for GET+POST handlers
 # VERSION
 
-use Dancer::Plugin;
-use Dancer ':syntax';
+use Dancer2::Plugin;
 
 register get_post => sub {
-  my ( $self, @args ) = plugin_args(@_);
-  any [qw/get post/] => @args;
+  my ( $dsl, @args ) = @_;
+  $dsl->any( [qw/get post/] => @args );
 };
 
-register_plugin for_versions => [ 1, 2 ];
+register_plugin for_versions => [ 2 ];
 
 1;
 
@@ -22,7 +21,7 @@ register_plugin for_versions => [ 1, 2 ];
 
 =head1 SYNOPSIS
 
-  use Dancer::Plugin::Syntax::GetPost;
+  use Dancer2::Plugin::Syntax::GetPost;
 
   get_post '/myform' => sub { ... };
 
@@ -40,7 +39,7 @@ You can write just this:
 =head1 SEE ALSO
 
 =for :list
-* L<Dancer>
+* L<Dancer2>
 
 =cut
 

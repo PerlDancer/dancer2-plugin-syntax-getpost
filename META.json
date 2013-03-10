@@ -4,7 +4,7 @@
       "David Golden <dagolden@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "apache_2_0"
    ],
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Dancer-Plugin-Syntax-GetPost",
+   "name" : "Dancer2-Plugin-Syntax-GetPost",
    "no_index" : {
       "directory" : [
          "t",
@@ -40,8 +40,7 @@
       },
       "runtime" : {
          "requires" : {
-            "Dancer" : "0",
-            "Dancer::Plugin" : "0",
+            "Dancer2::Plugin" : "0",
             "perl" : "5.008001",
             "strict" : "0",
             "warnings" : "0"
@@ -49,31 +48,35 @@
       },
       "test" : {
          "requires" : {
-            "Dancer::Test" : "0",
+            "Dancer2" : "0",
+            "Dancer2::Test" : "0",
+            "ExtUtils::MakeMaker" : "0",
             "File::Find" : "0",
+            "File::Spec::Functions" : "0",
             "File::Temp" : "0",
+            "List::Util" : "0",
             "Test::More" : "0.96"
          }
       }
    },
    "provides" : {
-      "Dancer::Plugin::Syntax::GetPost" : {
-         "file" : "lib/Dancer/Plugin/Syntax/GetPost.pm",
-         "version" : "0.001"
+      "Dancer2::Plugin::Syntax::GetPost" : {
+         "file" : "lib/Dancer2/Plugin/Syntax/GetPost.pm",
+         "version" : "0.002"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/dagolden/dancer-plugin-syntax-getpost/issues"
+         "web" : "https://github.com/dagolden/dancer2-plugin-syntax-getpost/issues"
       },
-      "homepage" : "https://metacpan.org/release/Dancer-Plugin-Syntax-GetPost",
+      "homepage" : "https://metacpan.org/release/Dancer2-Plugin-Syntax-GetPost",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/dagolden/dancer-plugin-syntax-getpost.git",
-         "web" : "https://github.com/dagolden/dancer-plugin-syntax-getpost"
+         "url" : "git://github.com/dagolden/dancer2-plugin-syntax-getpost.git",
+         "web" : "https://github.com/dagolden/dancer2-plugin-syntax-getpost"
       }
    },
-   "version" : "0.001"
+   "version" : "0.002"
 }
 
