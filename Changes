@@ -2,6 +2,8 @@ Revision history for Dancer2-Plugin-Syntax-GetPost
 
 {{$NEXT}}
 
+0.003     2023-12-13 08:14:00-05:00 America/New_York
+
     [CHANGED]
 
     - Updated tests to work with Dancer2 1.0.0+
