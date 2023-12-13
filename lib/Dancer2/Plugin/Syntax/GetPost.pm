@@ -7,6 +7,7 @@ package Dancer2::Plugin::Syntax::GetPost;
 # VERSION
 
 use Dancer2::Plugin;
+our $VERSION = '0.003';
 
 register get_post => sub {
   my ( $dsl, @args ) = @_;
